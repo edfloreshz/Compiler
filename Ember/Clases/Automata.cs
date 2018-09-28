@@ -1,19 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.IO;
 
 namespace Ember.Clases
 {
     class Automata
     {
         public int state = 0;
-        Program path = new Program();
+
+        public static bool IsUnix
+        {
+            get
+            {
+                int p = (int)Environment.OSVersion.Platform;
+                return (p == 4) || (p == 6) || (p == 128);
+            }
+        }
 
         public string[] SetTokens()
         {
+            string input = IsUnix
+                ? File.ReadAllText(Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).Parent.FullName, "GitHub/Ember/Ember/Input/Input.txt"))
+                : File.ReadAllText(Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).Parent.FullName, "Input\\Input.txt"));
+
             char[] separaciones = {' ' ,',', '\n', '\r', '(', ')', '[', ']', '{', '}' };
-            string[] tokens = path.input.Split(separaciones);
+            string[] tokens = input.Split(separaciones);
             return tokens;
         }
 

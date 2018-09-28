@@ -1,22 +1,31 @@
 ﻿using Ember.Clases;
 using System;
-using System.IO;
-using System.Reflection;
+
 
 namespace Ember
 {
     class Program
     {
-        public string input = File.ReadAllText(Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).Parent.FullName, "Input\\Input.txt"));
-
         static void Main(string[] args)
         {
+            if (args == null)
+            {
+                throw new ArgumentNullException(nameof(args));
+            }
+
             Automata Automata = new Automata();
             AutomataClassic AutomataClassic = new AutomataClassic();
             Program path = new Program();
 
             AutomataClassic.SetLexema(AutomataClassic.SetTokens());
-            Automata.SetLexema(Automata.SetTokens());
+            //Automata.SetLexema(Automata.SetTokens());
+            foreach (var token in AutomataClassic.AST)
+            {
+                Console.WriteLine("Tipo: " + token.TokenType);
+                Console.WriteLine("Valor: " + token.Value);
+                Console.WriteLine(" ");
+
+            }
             Console.ReadKey();
         }
     }
