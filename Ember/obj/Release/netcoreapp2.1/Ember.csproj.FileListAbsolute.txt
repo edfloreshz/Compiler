@@ -1,0 +1,10 @@
+/Users/eduardo/Documents/GitHub/Ember/Ember/bin/Release/netcoreapp2.1/Ember.deps.json
+/Users/eduardo/Documents/GitHub/Ember/Ember/bin/Release/netcoreapp2.1/Ember.runtimeconfig.json
+/Users/eduardo/Documents/GitHub/Ember/Ember/bin/Release/netcoreapp2.1/Ember.runtimeconfig.dev.json
+/Users/eduardo/Documents/GitHub/Ember/Ember/bin/Release/netcoreapp2.1/Ember.dll
+/Users/eduardo/Documents/GitHub/Ember/Ember/bin/Release/netcoreapp2.1/Ember.pdb
+/Users/eduardo/Documents/GitHub/Ember/Ember/obj/Release/netcoreapp2.1/Ember.csproj.CoreCompileInputs.cache
+/Users/eduardo/Documents/GitHub/Ember/Ember/obj/Release/netcoreapp2.1/Ember.AssemblyInfoInputs.cache
+/Users/eduardo/Documents/GitHub/Ember/Ember/obj/Release/netcoreapp2.1/Ember.AssemblyInfo.cs
+/Users/eduardo/Documents/GitHub/Ember/Ember/obj/Release/netcoreapp2.1/Ember.dll
+/Users/eduardo/Documents/GitHub/Ember/Ember/obj/Release/netcoreapp2.1/Ember.pdb

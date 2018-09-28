@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{74128661-392B-4E69-8743-00B5D949BC20}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Ember/Controladores/TokenController.cs">
+    <Files>
+      <File FileName="Ember/Program.cs" Line="11" Column="54" />
+      <File FileName="Ember/Controladores/TokenController.cs" Line="76" Column="36" />
+      <File FileName="Ember/Modelos/Token.cs" Line="28" Column="34" />
+    </Files>
+    <Pads>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="Ember" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Ember PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
