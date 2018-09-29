@@ -681,28 +681,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/eduardo/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Eddy\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/eduardo/Documents/GitHub/Ember/Ember/Ember.csproj",
+      "projectUniqueName": "C:\\Users\\Eddy\\Documents\\GitHub\\Ember\\Ember\\Ember.csproj",
       "projectName": "Ember",
-      "projectPath": "/Users/eduardo/Documents/GitHub/Ember/Ember/Ember.csproj",
-      "packagesPath": "/Users/eduardo/.nuget/packages/",
-      "outputPath": "/Users/eduardo/Documents/GitHub/Ember/Ember/obj",
+      "projectPath": "C:\\Users\\Eddy\\Documents\\GitHub\\Ember\\Ember\\Ember.csproj",
+      "packagesPath": "C:\\Users\\Eddy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Eddy\\Documents\\GitHub\\Ember\\Ember\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/eduardo/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Eddy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -720,9 +722,8 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
-            "version": "2.1.0",
+            "version": "[2.1.0, )",
             "autoReferenced": true
           }
         },
