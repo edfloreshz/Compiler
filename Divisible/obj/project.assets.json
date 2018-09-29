@@ -681,30 +681,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Eddy\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/eduardo/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eddy\\Documents\\GitHub\\Ember\\Divisible\\Divisible.csproj",
+      "projectUniqueName": "/Users/eduardo/Documents/GitHub/Ember/Divisible/Divisible.csproj",
       "projectName": "Divisible",
-      "projectPath": "C:\\Users\\Eddy\\Documents\\GitHub\\Ember\\Divisible\\Divisible.csproj",
-      "packagesPath": "C:\\Users\\Eddy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eddy\\Documents\\GitHub\\Ember\\Divisible\\obj\\",
+      "projectPath": "/Users/eduardo/Documents/GitHub/Ember/Divisible/Divisible.csproj",
+      "packagesPath": "/Users/eduardo/.nuget/packages/",
+      "outputPath": "/Users/eduardo/Documents/GitHub/Ember/Divisible/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Eddy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/eduardo/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -722,8 +720,9 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
-            "version": "[2.1.0, )",
+            "version": "2.1.0",
             "autoReferenced": true
           }
         },
