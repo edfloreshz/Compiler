@@ -8,8 +8,9 @@ namespace Divisible
     {
         public bool LexicoGrafico(string input)
         {
+            string inputOriginal = input;
             int state = 0;
-            bool isDivisible = false;
+
             foreach (char number in input)
             {
                 switch (state)
@@ -18,7 +19,6 @@ namespace Divisible
                         switch (number)
                         {
                             case '0':
-                                isDivisible = true;
                                 state = 3;
                                 break;
                             case '1':
@@ -28,7 +28,6 @@ namespace Divisible
                                 state = 2;
                                 break;
                             case '3':
-                                isDivisible = true;
                                 state = 3;
                                 break;
                             case '4':
@@ -38,7 +37,6 @@ namespace Divisible
                                 state = 2;
                                 break;
                             case '6':
-                                isDivisible = true;
                                 state = 3;
                                 break;
                             case '7':
@@ -48,7 +46,6 @@ namespace Divisible
                                 state = 2;
                                 break;
                             case '9':
-                                isDivisible = true;
                                 state = 3;
                                 break;
                             default:
@@ -56,40 +53,60 @@ namespace Divisible
                         }
                         break;
                     case 1:
-                        isDivisible = false;
-                        state = 4;
+                        if (number.Equals('0') || number.Equals('3') || number.Equals('6') || number.Equals('9'))
+                        {
+                            state = 1;
+                        }
+                        else if(number.Equals('1') || number.Equals('4') || number.Equals('7'))
+                        {
+                            state = 2;
+                        }
+                        else if (number.Equals('2') || number.Equals('5') || number.Equals('8'))
+                        {
+                            state = 3;
+                        }
                         break;
                     case 2:
-                        isDivisible = false;
-                        state = 4;
+                        if (number.Equals('0') || number.Equals('3') || number.Equals('6') || number.Equals('9'))
+                        {
+                            state = 2;
+                        }
+                        else if(number.Equals('1') || number.Equals('4') || number.Equals('7'))
+                        {
+                            state = 3;
+                        }
+                        else if (number.Equals('2') || number.Equals('5') || number.Equals('8'))
+                        {
+                            state = 1;
+                        }
                         break;
                     case 3:
                         if (number.Equals('0') || number.Equals('3') || number.Equals('6') || number.Equals('9'))
                         {
-                            isDivisible = true;
                             state = 3;
                         }
-                        else
+                        else if (number.Equals('1') || number.Equals('4') || number.Equals('7'))
                         {
-                            isDivisible = false;
-                            state = 4;
+                            state = 1;
                         }
-
+                        else if (number.Equals('2') || number.Equals('5') || number.Equals('8'))
+                        {
+                            state = 2;
+                        }
                         break;
                     default:
                         break;
                 }
             }
-            if (isDivisible == true)
+
+            if (state == 3)
             {
-                //Console.WriteLine("El numero " + input + " es divisible entre 3");
-                //Console.ReadKey();
+                Console.WriteLine("El numero " + inputOriginal + " es divisible entre 3");
                 return true;
             }
             else
             {
-                //Console.WriteLine("El numero " + input + " no es divisible entre 3");
-                //Console.ReadKey();
+                Console.WriteLine("El numero " + inputOriginal + " no es divisible entre 3");
                 return false;
             }
         }

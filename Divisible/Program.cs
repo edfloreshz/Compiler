@@ -6,14 +6,25 @@ namespace Divisible
     {
         static void Main(string[] args)
         {
-            Analizador analizador = new Analizador();
-            Test test = new Test();
+            bool again = true;
+            string respuesta = "";
+            while (again == true)
+            {
+                Analizador analizador = new Analizador();
+                Test test = new Test();
 
-            //Console.WriteLine("Ingrese el numero que desea evaular");
-            //string input = Console.ReadLine();
-            
-            test.TestValues();
-            //analizador.LexicoGrafico(input);
+                Console.WriteLine("Ingrese el numero que desea evaular");
+                string input = Console.ReadLine();
+
+                //test.TestValues();
+                analizador.LexicoGrafico(input);
+                Console.WriteLine("Desea evaluar otro numero? y/n ");
+                respuesta = Console.ReadLine();
+                if (respuesta != "y")
+                {
+                    again = false;
+                }
+            }
         }
     }
 }

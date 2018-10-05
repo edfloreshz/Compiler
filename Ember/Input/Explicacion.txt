@@ -1,0 +1,84 @@
+﻿
+Que onda morros
+
+Les queria grabar un video explicando todo pero creo que no se va poder por que estoy fuera de la ciudad.
+
+Muchos me han dicho que tienen dificultades con lo de compiladores y quiero explicarles lo mejor 
+que pueda para que no batallen tanto.
+Ya me avente mi analizador lexico-grafico y les voy a compartir algunas partes clave.
+
+Primeramente tienen que entender la primera de las funciones:
+
+	Lo que hace esta funcion es separar cada caracter de una secuencia de caracteres (string).
+
+Voy a utilizar el ejemplo del maestro:
+
+	11 + 22 - 33
+
+Lo primero que tenemos que generar es esto(todos los valores generados van a estar dentro de ""):
+
+	"1"  "1"  " "  "+"  " "  "2"  "2"  " "  "+"  " "  "3"  "3"
+
+Aqui lo que acabamos de hacer es separar un string y guardarlo ya sea en un arreglo[], una List<> o un ArrayList<>. 
+Existen mas formas de hacerlo, ustedes pueden utilizar la que les parezca mejor.
+
+Ya que tienen su arreglo de char listo, lo siguiente es recorrer ese arreglo, se puede hacer de diferentes maneras.
+
+	- Pueden crear un metodo que incremente el puntero o la posicion que estan recorriendo en su arreglo.
+	- Pueden usar un foreach para recorrer una lista.
+
+La decision es suya. 
+
+Despues de esto es cuando empiezan con el primer switch, tiene que crear una variable para almacenar el estado en el
+que se encuentran actualmente. El estado se inicializara con 0.
+
+Cuando estamos en el estado 0 creamos otro switch en el que tomamos nuestro caracter actual para evaluarlo.
+
+Tenemos que considerar que tipos de valores podrian entrar, una vez que conocemos TODOS los valores posibles 
+comenzamos a generar nuestros casos.
+
+case 0:
+    switch (token)
+    {
+        case ' ':
+            break;
+        case '(':
+            //Añadir token a la lista
+			//Cambiar el estado correspondiente segun el diagrama de transicion.
+            break;
+       
+		//Agreguen todos los tipos de datos que faltan.
+
+        default:
+            if (IsNumber())
+            {
+				//Añadir token a la lista
+				//Cambiar el estado correspondiente segun el diagrama de transicion.
+            }
+            else if (IsLetter())
+            {
+                //Añadir token a la lista
+				//Cambiar el estado correspondiente segun el diagrama de transicion.
+            }
+            else if (IsError())
+            {
+                //Añadir token a la lista
+				//Cambiar el estado correspondiente segun el diagrama de transicion.
+            }
+            break;
+    }
+break;
+
+Este case esta casi completo, solo faltaria que ustedes se avienten cada uno de los valores posibles
+Todos los valores vienen en el diagrama de transicion que el maestro genero en clase.
+
+Ya que tienen su case 0, pueden empezar a generar sus otros casos. En estos casos van a esperar otros 
+tipos de valores especificos dependiendo del estado anterior que los llevo al otro estado(otro que no sea el estado 0).
+
+En caso de que necesiten esperar muchos valores recursivos, tales como varios numeros o letras, basta 
+con hacer que el estado se devuelva al mismo case donde capturan esos datos y con un if pueden confirmar
+si lo que estan recibiendo es un numero/letra y no otro tipo de valor y de ese modo aseguran que su numero
+o letra solo contenga numeros o letras :p
+
+Una vez que generen su estructura de casos, tienen que retornar la lista entera, en caso de que quieran imprimir
+los valores recien generados.

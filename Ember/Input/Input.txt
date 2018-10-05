@@ -1,1 +1,12 @@
-﻿Hola soy kay
+<<<<<<< HEAD
+﻿papa12 ==a!= 0 asda //adasda
+((5 < 4))<= a
+*/
+adasdasd
+asdasds
+asdsad
+asdasd
+/*
+=======
+﻿var i = 1;
+>>>>>>> 9011876592f526ef1de727085c78e4245e9a2dd6

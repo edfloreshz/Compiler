@@ -20,9 +20,6 @@ namespace Ember.Clases
             TokenType = tokenType;
             Value = value;
         }
-
-        public void NextSymbol()
-        {
-        }
+        
     }
 }
