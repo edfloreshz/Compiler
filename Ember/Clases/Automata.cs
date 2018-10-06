@@ -140,7 +140,7 @@ namespace Ember.Clases
                         {
                             if (Array.Exists(palabrasReservadas, s => s.Equals(lexema)))
                             {
-                                if (lexema.ToLower() == "for")
+                                if (lexema.ToLower() == "for" || lexema.ToLower() == "while")
                                 {
                                     LOOPS++;
                                 }

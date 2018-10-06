@@ -11,6 +11,8 @@ namespace Ember
             Token token;
             Automata automata = new Automata();
 
+
+
             while (true)
             {
                 token = automata.SetLexema();
@@ -60,6 +62,13 @@ namespace Ember
                         break;
                     case 15:
                         Console.WriteLine("Fin Del Fichero " + token.Value + '\n');
+
+                        Console.WriteLine("Variables: " + automata.VARIABLES);
+                        Console.WriteLine("Constantes: " + automata.CONSTANTES);
+                        Console.WriteLine("Asignaciones: " + automata.ASIGNACIONES);
+                        Console.WriteLine("Condicionales: " + automata.CONDICIONALES);
+                        Console.WriteLine("Ciclos: " + automata.LOOPS);
+                        Console.WriteLine("Comentarios: " + automata.COMENTARIOS);
                         Console.ReadKey();
                         break;
                     case 16:
@@ -69,6 +78,7 @@ namespace Ember
                         return;
                 }
             }
+
         }
     }
 }
