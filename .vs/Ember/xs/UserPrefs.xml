@@ -1,16 +1,24 @@
 ﻿<Properties StartupConfiguration="{74128661-392B-4E69-8743-00B5D949BC20}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Ember/Clases/Automata.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Ember/Input/Input.txt">
     <Files>
-      <File FileName="Ember/Program.cs" Line="34" Column="1" />
-      <File FileName="Ember/Clases/Automata.cs" Line="46" Column="49" />
-      <File FileName="Ember/Input/Input.txt" Line="1" Column="11" />
-      <File FileName="Ember/Clases/AutomataClassic.cs" Line="62" Column="51" />
+      <File FileName="Ember/Program.cs" Line="66" Column="56" NotebookId="1" />
+      <File FileName="Ember/Clases/Token.cs" Line="28" Column="1" NotebookId="1" />
+      <File FileName="Ember/Clases/Automata.cs" Line="110" Column="1" NotebookId="1" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="64" Y="154" Width="640" Height="480">
+        <Files>
+          <File FileName="Ember/Input/Input.txt" Line="13" Column="27" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Divisible PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/eduardo/Documents/GitHub/Ember/Ember/Clases/Automata.cs" relfile="Ember/Clases/Automata.cs" line="109" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />

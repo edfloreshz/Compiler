@@ -6,23 +6,26 @@ namespace Ember.Clases
 {
     class Token
     {
-        public string TokenType { get; set; }
+        public int TokenType { get; set; }
         public string Value { get; set; }
 
-        public Token(string tokenType)
+        public Token()
+        {
+            TokenType = 0;
+            Value = string.Empty;
+        }
+
+        public Token(int tokenType)
         {
             TokenType = tokenType;
             Value = string.Empty;
         }
 
-        public Token(string tokenType, string value)
+        public Token(int tokenType, string value)
         {
             TokenType = tokenType;
             Value = value;
         }
 
-        public void NextSymbol()
-        {
-        }
     }
 }
