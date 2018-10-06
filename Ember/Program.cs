@@ -69,6 +69,7 @@ namespace Ember
                         Console.WriteLine("Condicionales: " + automata.CONDICIONALES);
                         Console.WriteLine("Ciclos: " + automata.LOOPS);
                         Console.WriteLine("Comentarios: " + automata.COMENTARIOS);
+                        Console.WriteLine("Lineas hasta Main: " + automata.LINEAMAINFINAL);
                         Console.ReadKey();
                         break;
                     case 16:

@@ -31,11 +31,12 @@ namespace Ember.Clases
                                 Retract();
                                 break;
                             case '\n':
-                                line++;
+                                LINE++;
                                 break;
                             case ' ':
                                 break;
                             case ';':
+                                state = 10;
                                 return new Token(FINDEDECLARACION);
                             case '(':
                                 return new Token(PARENTESISABIERTO);
@@ -148,6 +149,14 @@ namespace Ember.Clases
                                 {
                                     CONSTANTES++;
                                 }
+                                else if (lexema.ToLower().Equals("main"))
+                                {
+                                    LINEAMAINFINAL = LINEAMAINFINAL - (LINE-2);
+                                }
+                                else if (lexema.ToLower().Equals("return"))
+                                {
+                                    LINEAMAINFINAL = LINEAMAINFINAL + LINE;
+                                }
                                 Retract();
                                 return new Token(PALABRARESERVADA, lexema);
                             }
@@ -189,7 +198,7 @@ namespace Ember.Clases
                         if (caracter == '\n')
                         {
                             state = 0;
-                            line++;
+                            LINE++;
                             COMENTARIOS++;
                             return new Token(COMENTARIOMONOLINEA, lexema);
                         }
@@ -201,7 +210,7 @@ namespace Ember.Clases
                         }
                         if (caracter == '\n')
                         {
-                            line++;
+                            LINE++;
                         }
                         else if (caracter == '*')
                         {
@@ -221,7 +230,7 @@ namespace Ember.Clases
                             }
                             else if (caracter == '\n')
                             {
-                                line++;
+                                LINE++;
                                 break;
                             }
                             state = 8;
@@ -232,6 +241,13 @@ namespace Ember.Clases
                             state = 0;
                             return new Token(COMENTARIOMULTILINEA, lexema);
                         }
+                    case 10:
+                        if (caracter == '\n')
+                        {
+                            LINEAMAINFINAL = LINEAMAINFINAL + 1;
+                            break;
+                        }
+                        break;
                     default:
                         break;
                 } // FIN DE SWITCH(STATE)
@@ -260,7 +276,7 @@ namespace Ember.Clases
             }
             forward = 0;
             inicial = 0;
-            line = 1;
+            LINE = 1;
         }
 
         public char NextChar()
@@ -324,7 +340,7 @@ namespace Ember.Clases
 
         public int GetLine()
         {
-            return line;
+            return LINE;
         }
 
         public static int GetPARAB()
@@ -383,13 +399,14 @@ namespace Ember.Clases
         public int CONDICIONALES; // Contador de condicionales
         public int LOOPS; // Contador de loops
         public int COMENTARIOS; // Contador de comentarios
+        public int LINE; // Variable para llevar el control de la linea que se está analizando.
+        public int LINEAMAINFINAL; // Variable para llevar el control de la linea que se está analizando.
 
         public StreamReader input; // Variable donde se va a almacenar todo el fichero.
         public string filePath; // Ruta del archivo de texto.
         public string buffer; // Variable donde se va a almacenar cada caracter del el fichero.
         public int forward;
         public int inicial;
-        public int line; // Variable para llevar el control de la linea que se está analizando.
         public string[] palabrasReservadas = {
             "main",
             "case",
