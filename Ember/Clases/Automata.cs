@@ -218,7 +218,7 @@ namespace Ember.Clases
                                 }
                                 else if (lexema.ToLower().Equals("main"))
                                 {
-                                    LINEAMAININICIAL = LINEAMAININICIAL - (LINE-2);
+                                    LINEAMAININICIAL = LINEAMAININICIAL - (LINE-1);
                                 }
                                 Retract();
                                 return new Token(PALABRARESERVADA, lexema);
