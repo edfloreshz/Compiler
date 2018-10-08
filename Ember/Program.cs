@@ -10,9 +10,6 @@ namespace Ember
         {
             Token token;
             Automata automata = new Automata();
-
-
-
             while (true)
             {
                 token = automata.SetLexema();

@@ -8,6 +8,72 @@ namespace Ember.Clases
 {
     class Automata
     {
+        public int VARIABLES; // Contador de variables
+        public int CONSTANTES; // Contador de constantes
+        public int ASIGNACIONES; // Contador de asignaciones
+        public int CONDICIONALES; // Contador de condicionales
+        public int LOOPS; // Contador de loops
+        public int COMENTARIOS; // Contador de comentarios
+        public int LINE; // Variable para llevar el control de la linea que se está analizando.
+        public int LINEAMAINFINAL; // Variable para llevar el control de la linea que se está analizando.
+        public int LINEAMAININICIAL; // Variable para llevar el control de la linea que se está analizando.
+
+        public StreamReader input; // Variable donde se va a almacenar todo el fichero.
+        public string filePath; // Ruta del archivo de texto.
+        public string buffer; // Variable donde se va a almacenar cada caracter del el fichero.
+        public int forward;
+        public int inicial;
+        public string[] palabrasReservadas = {
+            "main",
+            "case",
+            "class",
+            "const",
+            "default",
+            "delete",
+            "else",
+            "enum",
+            "false",
+            "true",
+            "if",
+            "for",
+            "while",
+            "do",
+            "new",
+            "private",
+            "protected",
+            "switch",
+            "try",
+            "catch",
+            "return",
+            "public"
+        }; // Arreglo de palabras reservadas.
+        public string[] tiposDeDato = {
+            "char",
+            "int",
+            "long",
+            "double",
+            "string",
+            "short",
+            "bool",
+        }; // Arreglo de los tipos de dato.
+
+        public static int PARENTESISABIERTO = 1; // Paréntesis abierto
+        public static int PARENTESISCERRADO = 2; // Paréntesis cerrado
+        public static int OPERADORARITMETICO = 3; // Operador aritmético (*¿-/)
+        public static int OPERADORRELACIONAL = 4; // Operador relacional (= <= >=)
+        public static int ASIGNACION = 5; // Asignación (=)
+        public static int IDENTIFICADOR = 6; // Identificador (nombre de variable)
+        public static int NUMERONATURAL = 7; // Numero natural (0-9)
+        public static int ERROR = 8; // Error
+        public static int LLAVEABIERTA = 9; // Llave abierta ({)
+        public static int LLAVECERRADA = 10; // Llave cerrada (})
+        public static int FINDEDECLARACION = 11; // Punto y coma (;)
+        public static int PALABRARESERVADA = 12; // Palabra Reservada
+        public static int COMENTARIOMONOLINEA = 13; // Comentario Monolinea (//)
+        public static int COMENTARIOMULTILINEA = 14; // Comentario Multilinea (/**/)
+        public static int ENDOFFILE = 15; // Fin del fichero (~)
+        public static int TIPODEDATO = 16; // Tipo de dato (int, double, string, etc...)
+
         public Token SetLexema()
         {
             int state = 0;
@@ -24,6 +90,7 @@ namespace Ember.Clases
                             case '\r':
                                 break;
                             case '~':
+                                LINEAMAINFINAL = LINEAMAININICIAL + LINEAMAINFINAL;
                                 return new Token(ENDOFFILE);
                             case '\t':
                                 break;
@@ -36,7 +103,6 @@ namespace Ember.Clases
                             case ' ':
                                 break;
                             case ';':
-                                state = 10;
                                 return new Token(FINDEDECLARACION);
                             case '(':
                                 return new Token(PARENTESISABIERTO);
@@ -45,6 +111,7 @@ namespace Ember.Clases
                             case '{':
                                 return new Token(LLAVEABIERTA);
                             case '}':
+                                LINEAMAINFINAL = LINE;
                                 return new Token(LLAVECERRADA);
                             case '*':
                                 return new Token(OPERADORARITMETICO, Char.ToString(caracter));
@@ -151,11 +218,7 @@ namespace Ember.Clases
                                 }
                                 else if (lexema.ToLower().Equals("main"))
                                 {
-                                    LINEAMAINFINAL = LINEAMAINFINAL - (LINE-2);
-                                }
-                                else if (lexema.ToLower().Equals("return"))
-                                {
-                                    LINEAMAINFINAL = LINEAMAINFINAL + LINE;
+                                    LINEAMAININICIAL = LINEAMAININICIAL - (LINE-2);
                                 }
                                 Retract();
                                 return new Token(PALABRARESERVADA, lexema);
@@ -186,7 +249,6 @@ namespace Ember.Clases
                         else
                         {
                             Retract();
-                            COMENTARIOS++;
                             return new Token(OPERADORARITMETICO, "/");
                         }
                     case 7:
@@ -239,15 +301,9 @@ namespace Ember.Clases
                         else
                         {
                             state = 0;
+                            COMENTARIOS++;
                             return new Token(COMENTARIOMULTILINEA, lexema);
                         }
-                    case 10:
-                        if (caracter == '\n')
-                        {
-                            LINEAMAINFINAL = LINEAMAINFINAL + 1;
-                            break;
-                        }
-                        break;
                     default:
                         break;
                 } // FIN DE SWITCH(STATE)
@@ -393,69 +449,6 @@ namespace Ember.Clases
             return forward;
         }
 
-        public int VARIABLES; // Contador de variables
-        public int CONSTANTES; // Contador de constantes
-        public int ASIGNACIONES; // Contador de asignaciones
-        public int CONDICIONALES; // Contador de condicionales
-        public int LOOPS; // Contador de loops
-        public int COMENTARIOS; // Contador de comentarios
-        public int LINE; // Variable para llevar el control de la linea que se está analizando.
-        public int LINEAMAINFINAL; // Variable para llevar el control de la linea que se está analizando.
 
-        public StreamReader input; // Variable donde se va a almacenar todo el fichero.
-        public string filePath; // Ruta del archivo de texto.
-        public string buffer; // Variable donde se va a almacenar cada caracter del el fichero.
-        public int forward;
-        public int inicial;
-        public string[] palabrasReservadas = {
-            "main",
-            "case",
-            "class",
-            "const",
-            "default",
-            "delete",
-            "else",
-            "enum",
-            "false",
-            "true",
-            "if",
-            "for",
-            "while",
-            "do",
-            "new",
-            "private",
-            "protected",
-            "switch",
-            "try",
-            "catch",
-            "return",
-            "public"
-        }; // Arreglo de palabras reservadas.
-        public string[] tiposDeDato = {
-            "char",
-            "int",
-            "long",
-            "double",
-            "string",
-            "short",
-            "bool",
-        }; // Arreglo de los tipos de dato.
-
-        public static int PARENTESISABIERTO = 1; // Paréntesis abierto
-        public static int PARENTESISCERRADO = 2; // Paréntesis cerrado
-        public static int OPERADORARITMETICO = 3; // Operador aritmético (*¿-/)
-        public static int OPERADORRELACIONAL = 4; // Operador relacional (= <= >=)
-        public static int ASIGNACION = 5; // Asignación (=)
-        public static int IDENTIFICADOR = 6; // Identificador (nombre de variable)
-        public static int NUMERONATURAL = 7; // Numero natural (0-9)
-        public static int ERROR = 8; // Error
-        public static int LLAVEABIERTA = 9; // Llave abierta ({)
-        public static int LLAVECERRADA = 10; // Llave cerrada (})
-        public static int FINDEDECLARACION = 11; // Punto y coma (;)
-        public static int PALABRARESERVADA = 12; // Palabra Reservada
-        public static int COMENTARIOMONOLINEA = 13; // Comentario Monolinea (//)
-        public static int COMENTARIOMULTILINEA = 14; // Comentario Multilinea (/**/)
-        public static int ENDOFFILE = 15; // Fin del fichero (~)
-        public static int TIPODEDATO = 16; // Tipo de dato (int, double, string, etc...)
     }
 }

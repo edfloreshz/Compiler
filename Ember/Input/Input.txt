@@ -3,6 +3,10 @@
 
 
 
+
+
+
+
 int main()
 {
     char caracter;
@@ -27,12 +31,12 @@ int main()
     for( int a = 10; a < 20; a = a + 1 ) {
       
     }
-    // Hola 
-    /* Hola
- Como
- Estas
-*/
-
+    //Hola 
+    /*Hola
+    Como
+    Estas
+    */
 return 0;
 }
+
 
