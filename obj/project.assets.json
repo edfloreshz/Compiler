@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer.csproj",
-      "projectName": "LexicalAnalizer",
-      "projectPath": "/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer.csproj",
+      "projectUniqueName": "/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalyzer.csproj",
+      "projectName": "LexicalAnalyzer",
+      "projectPath": "/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalyzer.csproj",
       "packagesPath": "/home/eduardo/.nuget/packages/",
       "outputPath": "/home/eduardo/Documents/GitHub/projects/lexical_analysis/obj/",
       "projectStyle": "PackageReference",

@@ -4,7 +4,7 @@ using System.Linq;
 using System.IO;
 
 
-namespace LexicalAnalizer.Clases
+namespace LexicalAnalyzer.Clases
 {
   class Automata
   {

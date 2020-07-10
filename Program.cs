@@ -1,7 +1,7 @@
-﻿using LexicalAnalizer.Clases;
+﻿using LexicalAnalyzer.Clases;
 using System;
 
-namespace LexicalAnalizer
+namespace LexicalAnalyzer
 {
   class Program
   {

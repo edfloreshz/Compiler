@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LexicalAnalizer.Clases
+namespace LexicalAnalyzer.Clases
 {
   class Token
   {

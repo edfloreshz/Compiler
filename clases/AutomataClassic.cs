@@ -4,7 +4,7 @@ using System.Linq;
 using System.IO;
 
 
-namespace LexicalAnalizer.Clases
+namespace LexicalAnalyzer.Clases
 {
   class AutomataClassic
   {
@@ -23,7 +23,7 @@ namespace LexicalAnalizer.Clases
     public char[] SetTokens()
     {
       string input = IsUnix
-          ? File.ReadAllText(Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).Parent.FullName, "GitHub/LexicalAnalizer/LexicalAnalizer/Input/Input.txt"))
+          ? File.ReadAllText(Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).Parent.FullName, "GitHub/LexicalAnalyzer/LexicalAnalyzer/Input/Input.txt"))
           : File.ReadAllText(Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).Parent.FullName, "Input\\Input.txt"));
 
       input = input + "$";
