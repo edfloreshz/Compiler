@@ -1,0 +1,12 @@
+/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer/bin/Debug/netcoreapp2.1/LexicalAnalizer.deps.json
+/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer/bin/Debug/netcoreapp2.1/LexicalAnalizer.runtimeconfig.json
+/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer/bin/Debug/netcoreapp2.1/LexicalAnalizer.runtimeconfig.dev.json
+/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer/bin/Debug/netcoreapp2.1/LexicalAnalizer.dll
+/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer/bin/Debug/netcoreapp2.1/LexicalAnalizer.pdb
+/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer/obj/Debug/netcoreapp2.1/LexicalAnalizer.csprojAssemblyReference.cache
+/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer/obj/Debug/netcoreapp2.1/LexicalAnalizer.AssemblyInfoInputs.cache
+/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer/obj/Debug/netcoreapp2.1/LexicalAnalizer.AssemblyInfo.cs
+/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer/obj/Debug/netcoreapp2.1/LexicalAnalizer.csproj.CoreCompileInputs.cache
+/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer/obj/Debug/netcoreapp2.1/LexicalAnalizer.dll
+/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer/obj/Debug/netcoreapp2.1/LexicalAnalizer.pdb
+/home/eduardo/Documents/GitHub/projects/lexical_analysis/LexicalAnalizer/obj/Debug/netcoreapp2.1/LexicalAnalizer.genruntimeconfig.cache
